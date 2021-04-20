@@ -1,4 +1,4 @@
-import api from "../api";
+import {auth} from "../api/index.js";
 import { USER_LOGGED_IN, USER_LOGGED_OUT } from "../types";
 import { setAuthorizationHeader } from "../utils";
 
@@ -13,7 +13,7 @@ const userLoggedOut = () => ({
 
 export const loginUser = credentials => async dispatch => {
   console.log(process.env.IS_PROD);
-  const tokens = await api.auth.login(credentials);
+  const tokens = await auth.login(credentials);
   setAuthorizationHeader(tokens.authToken);
   dispatch(userLoggedIn(tokens));
 };
