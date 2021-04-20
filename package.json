@@ -43,7 +43,7 @@
   "scripts": {
     "dev:web": "react-scripts start",
     "dev:api": "cd api && yarn run dev:api",
-    "build:web": "react-scripts build",
+    "build": "react-scripts build",
     "build:api": "cd api && yarn run build:api",
     "prod:serve": "cd api && yarn run build:api && node build/index.js",
     "start:web": "cross-env REACT_APP_IS_PROD=true  cross-env REACT_APP_PROD_URL_PREFIX='https://pointofsales-backend.herokuapp.com/api' yarn run dev:web",
